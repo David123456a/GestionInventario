@@ -24,6 +24,7 @@
 
 
 
+
 <body class="bg-gradient-primary">
 
     <div class="container">
@@ -37,12 +38,14 @@
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
+                            
 
                             <!-- imagen -->
                             <div class="col-lg-6 d-none d-lg-block " style="padding: 0;">
                                 <img src="img/img1.jpg" alt="image de login"
                                 style="width: 100% ; height: 100%; object-fit:cover ; border-radius: 0;">
                             </div>
+                            <!-- imagen -->
 
                           
                             <div class="col-lg-6">
@@ -54,7 +57,8 @@
                                     </div>
 
 
-                                      <!--  col formulario -->  <!--  col formulario -->
+
+                                      <!--  col FORMULARIO ingreso datos usuarios -->  <!--  col formulario -->
                                     <form class="user" action="login2.php" method="POST">
 
                                         <div class="form-group">
@@ -67,30 +71,14 @@
                                             <input type="password" name="contraseña" id="contraseña" class="form-control form-control-user"
                                                 placeholder="Ingrese su contraseña">
                                         </div>
+                                        <!-- FIN  col formulario -->  <!--  col formulario -->
 
-                                        <!--  
-                                        <div class="form-group">
-                                            <div class="custom-control custom-checkbox small">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck">
-                                                <label class="custom-control-label" for="customCheck">Remember
-                                                    Me</label>
-                                            </div>
-                                        </div>
-                                        -->
 
                                         
                                         <button type="submit"class="btn btn-primary btn-user btn-block">Acceder</button>
 
 
-                                        <!-- Credenciales con autenticacion de Google OAuth2.0 -->
-                                        <hr>
-                                        <a href="index.html" class="btn btn-google btn-user btn-block">
-                                            <i class="fab fa-google fa-fw"></i> Login with Google
-                                        </a>
-                                        <a href="index.html" class="btn btn-facebook btn-user btn-block">
-                                            <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
-                                        </a>
-                                        <!-- Credenciales con autenticacion de Google OAuth2.0 -->
+
 
                                     </form>
 

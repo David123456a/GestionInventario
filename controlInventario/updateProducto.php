@@ -8,7 +8,7 @@ include ('../db.php');
 $id = $_GET['id'];
 
 //Se consulta todos los datos del PRODUCTO en la base de datos aca la variante es que se hace un JOIN para obtener el id de la CATEGORIA
-$query = "SELECT p.id, p.nombre, p.descripcion, p.precio, p.stock, p.category_id, c.id id_categoria, c.nombre nombre_categoria, p.status, pro.nombre_proveedor proveedor
+$query = "SELECT p.id, p.nombre, p.descripcion, p.precio, p.stock, p.category_id, c.id id_categoria, c.nombre nombre_categoria, p.status, pro.nombre_proveedor proveedor, pro.id_proveedor
             FROM products p 
             JOIN categories c ON p.category_id = c.id
             JOIN proveedor pro on p.id_proveedor = pro.id_proveedor
@@ -31,12 +31,12 @@ if (isset($_POST['submit'])){
     $stock= $_POST['stock'];
     $category_id= $_REQUEST['CATEGORIA1']; //CATEGORIA1 viene de <select name="CATEGORIA1" id="categories" class="notItemOne">
     $status=$_POST['status'];
-    $proveedor=$_POST['proveedor'];
+    $proveedor=$_POST['PROVEEDOR1'];
 
 
 
     $query = "UPDATE products
-              SET nombre='$nombre', descripcion='$descripcion', precio=$precio,  stock=$stock, category_id=$category_id , Status='$status', proveedor='$proveedor'
+              SET nombre='$nombre', descripcion='$descripcion', precio=$precio,  stock=$stock, category_id=$category_id , Status='$status', id_proveedor='$proveedor'
               WHERE id=$id";
     
     if ($con->query($query)==TRUE){
@@ -130,11 +130,34 @@ if (isset($_POST['submit'])){
                 <input type="text" name="status" class="form-control" value="<?php echo $PRODUCTO['status'];?>" require>
             </div>
 
-            <div>
-                <label for="proveedor">Proveedor</label>
-                <input type="text" name="proveedor" class="form-control" value="<?php echo $PRODUCTO['proveedor'];?>" require>
-            </div>
 
+            
+            <div>
+               
+               <label for="">Proveedor  <br> </label>
+
+                   <?php
+                   $query = "   SELECT id_proveedor , nombre_proveedor FROM proveedor ORDER BY nombre_proveedor  ";
+                   $result= $con->query($query);
+                   ?>
+                   <!-- Con name="CATEGORIA1" se evia al POST -->
+                     <select name="PROVEEDOR1" id="proveedor" class="form-control">
+                               <!--Se obtiene ID de CATEGORIA  -->     <!-- SELECTED relaciona nombre con ID CATEGORIA -->
+                   <option  value="<?php echo $PRODUCTO['id_proveedor'];?>" selected><?php echo $PRODUCTO['proveedor'];?></option>
+                           <?php
+                               while ($row= $result->fetch_assoc() ){
+                               ?>
+                                   <!--  Datos  vienen del SELECT id_proveedor , nombre_proveedor FROM proveedor ORDER BY nombre -->
+                                   <option value="<?php echo $row['id_proveedor'];?>"><?php echo $row['nombre_proveedor'];?></option>
+                               <?php   } ?>
+
+               </select>
+           </div>
+
+
+
+
+          
             
             <p><br></p>                           
             <button type="submit" name="submit" class="btn btn-success">Guardar</button>

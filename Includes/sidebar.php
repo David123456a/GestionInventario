@@ -96,7 +96,7 @@
                 <div id="menu3" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Gestion de Movimientos:</h6>
-                        <a class="collapse-item" href= #>Entrada de Movimientos</a>
+                        <a class="collapse-item" href= crearMovimiento.php>Entrada de Movimientos</a>
                         <a class="collapse-item" href= #>Salida de Momivimientos</a>
                         <a class="collapse-item" href= #>Consulta de Movimientos</a>
                         

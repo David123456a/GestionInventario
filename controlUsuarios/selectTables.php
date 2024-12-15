@@ -6,7 +6,10 @@
                 
                     //Se consulta los datos a la tabla  "usuario"
                 //$query = "SELECT * FROM users";
-                $query = "SELECT u.id, u.nombre, u.email, u.usuario, u.contraseña, u.id_rol, u.fecha_creacion, r.nombre rol FROM users u LEFT JOIN rol r ON u.id_rol = r.id_rol;";
+                $query = "  SELECT u.id, u.nombre, u.email, u.usuario, u.contraseña, u.id_rol, u.fecha_creacion, r.nombre rol 
+                            FROM users u 
+                            LEFT JOIN rol r ON u.id_rol = r.id_rol;
+                        ";
                 $result= $con->query($query);
                 
                     //se valida en un bucle si hay asociaciones de datos para mostrar todos los datos de la tabla
@@ -24,10 +27,10 @@
                     <td>   <?php echo $row['fecha_creacion']; ?></td>
                     
                     <td>                             
-                            <a href="controlUsuarios/updateUsuario.php?id=<?php echo $row['id'];  ?>" class="btn btn-warning">Actualizar</a> 
+                            <a href="controlUsuarios/updateUsuario.php?id=<?php echo $row['id'];  ?>"   class="btn btn-warning">Actualizar</a> 
                                                                   
-                            <a href="controlUsuarios/deleteUsuario.php?id=<?php echo $row['id'];  ?>" class= "btn btn-danger">Eliminar</a> 
-                            <a href="controlUsuarios/updateUsuario.php?id=<?php echo $row['id']; ?>" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#updateModal" data-bs-whatever="@mdo">MODAL</a>
+                            <a href="controlUsuarios/deleteUsuario.php?id=<?php echo $row['id'];  ?>"   class= "btn btn-danger">Eliminar</a> 
+                            
                     </td>
                 </tr>
 
@@ -45,10 +48,10 @@
 
 
 
-
-
-
-
+<!-- BOTON PARA LA MODAL -->
+<!-- 
+<a href="controlUsuarios/updateUsuario.php?id=<?php //echo $row['id']; ?>" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#updateModal" data-bs-whatever="@mdo">MODAL</a>
+ -->
 
 
 

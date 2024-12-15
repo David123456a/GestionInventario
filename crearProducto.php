@@ -65,7 +65,8 @@
                                     
                                         <div class="modal-body">
 
-
+                                        
+                                                 <!-- FORMULAIO -->
                                                 <form action="controlInventario/createProducto.php" method="POST">
 
 
@@ -112,11 +113,17 @@
 
 
 
-                                                    <div>
-                                                        <label for="status">Status</label>
-                                                        <input type="text" name="status" class="form-control"require>
-                                                    
-                                                    </div >
+                                                    <div  class="mb-3">
+
+                                                        <label for="status">Estado</label>
+
+                                                        <select name="status" class="form-control" id="status">
+                                                            <option value="Activo">ACTIVO</option>
+                                                            <option value="Desactivado">DESACTIVADO</option>
+                                                            <option value="Retenido">RETENIDO</option>
+                                                        </select>
+
+                                                    </div>
 
                                  
 
@@ -148,6 +155,7 @@
                                                     </div>
 
                                                 </form>
+                                                 <!-- FIN FORMULAIO -->
 
                                         </div>
 

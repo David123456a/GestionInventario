@@ -13,7 +13,7 @@ function dibujarGrafico() {
 
                         //opciones  del grafico
                     var options = {
-                                        title: 'Cantidad de productos por proveedores',
+                                        title: 'Costo de productos por proveedores',
                                         width: 600,
                                         height: 400,
                                         pieHole: 0.4

@@ -5,11 +5,11 @@
             <!-- Sidebar - Brand LOGO  -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="home.php">
                 
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-solid fa-user"></i> 
+                <div class="sidebar-brand-icon ">  
+                    <i class="fa-brands fa-docker"></i> 
                 </div>
 
-                <div class="sidebar-brand-text mx-3">LOGO EMPRESA </div>
+                <div class="sidebar-brand-text mx-3">Tecnologias S.A. </div>
             </a>
 
 
@@ -28,15 +28,19 @@
 
 
 
+
+
+
             <!-- Divider -->
             <hr class="sidebar-divider">
 
 
-            <!-- Heading  GESTION DE PRODUCTOS estos solo son titulos y aparecen transparente en la pagina-->
+            <!-- Heading  GESTION DE PRODUCTOS  PRODUCTOS PRODUCTOS estos solo son titulos y aparecen transparente en la pagina-->
             <div class="sidebar-heading">
                 GESTION DE PRODUCTOS
             </div>
 
+           <!-- INVENTARIO INVENTARIO INVENTARIO INVENTARIO Gestion de productos CRUD --> 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#menu1"
@@ -47,14 +51,20 @@
                 <div id="menu1" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">INVENTARIO:</h6>
-                        <a class="collapse-item" href="crearProducto.php">Nuevo Producto</a>
                         <a class="collapse-item" href="mostrarProducto.php">Mostrar productos</a>
+                        <a class="collapse-item" href="crearProducto.php">Crear Producto</a>                       
                         <a class="collapse-item" href="editarProducto.php">Editar productos</a>
                         <a class="collapse-item" href="eliminarProducto.php">Eliminar productos</a>
                     </div>
                 </div>
             </li>
 
+
+
+
+
+
+            <!-- CATEROGIA PROVEEDOR      CATEGORIA PROVEEDOR     CATEGORIA PROVEEDOR  CURUD -->
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#menu2"
@@ -65,13 +75,19 @@
                 <div id="menu2" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Gestion de inventario:</h6>
-                        <a class="collapse-item" href="utilities-color.html">Control de Categorias</a>
-                        <a class="collapse-item" href="utilities-border.html">Control de proveedores</a>
+                        <h6 class="collapse-header">CATEGORIA / PROVEEDOR:</h6>
+                        <a class="collapse-item" href="controlCategorias.php">Control de Categorias</a>
+                        <a class="collapse-item" href="controlProveedores.php">Control de proveedores</a>
                       
                     </div>
                 </div>
             </li>
+
+
+
+
+
+
 
 
 
@@ -86,7 +102,7 @@
                 MOVIMIENTOS INVENTARIO
             </div>
 
-            <!-- Nav Item - Pages Collapse Menu INVENTARIO -->
+            <!-- Nav Item - Pages Collapse  LISTA MOVIMIENTOS MOVIMIENTOS MOVIMIENTOS -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#menu3"
                     aria-expanded="true" aria-controls="collapsePages">
@@ -95,10 +111,9 @@
                 </a>
                 <div id="menu3" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Gestion de Movimientos:</h6>
-                        <a class="collapse-item" href= crearMovimiento.php>Entrada de Movimientos</a>
-                        <a class="collapse-item" href= #>Salida de Momivimientos</a>
-                        <a class="collapse-item" href= #>Consulta de Movimientos</a>
+                        <h6 class="collapse-header">MOVIMIENTOS:</h6>
+                        <a class="collapse-item" href= crearMovimiento.php>Crear Entrada/Salida </a>
+                        <a class="collapse-item" href= mostrarMovimiento.php>Mostrar Movimientos</a>
                         
                     </div>
                 </div>
@@ -107,10 +122,13 @@
 
 
 
+
+
+
              <!-- Divider -->
              <hr class="sidebar-divider">
 
-            <!-- Nav Item - Tales USUARIOS -->
+            <!-- Nav Item - TaBLes USUARIOS  USUARIOS USUARIOS -->
             <li class="nav-item">
                 <a class="nav-link" href="controlUsuarios.php">
                     <i class="fas fa-fw fa-table"></i>
@@ -118,13 +136,39 @@
             </li>
 
 
-            
-            <!-- Nav Item - Charts REPORTES-->
-            <li class="nav-item">
-                <a class="nav-link" href="charts.html">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Reportes</span></a>
+
+
+
+
+
+            <!--FIN Nav Item - Charts REPORTES  REPORTES REPORTES -->
+            <!-- Nav Item - Utilities Collapse Menu -->
+            <li class="nav-item">                                                     <!--listaReporte es el id que llama a la lista   -->
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#listaReporte"
+                    aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-solid fa-chart-area"></i>
+                    <span>Reportes</span>
+                </a>
+                <div id="listaReporte" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Reportes :</h6>
+                        <a class="collapse-item" href="reportePdf/productoPdf.php">Reporte de Productos</a>
+                        <a class="collapse-item" href="reportePdf/movimientoPdf.php">Reporte de Movimientos</a> 
+                        <a class="collapse-item" href="reportePdf/categoriaPdf.php">Reporte de Categorias</a>
+                        <a class="collapse-item" href="reportePdf/proveedorPdf.php">Reporte de proveedores</a>
+                        <a class="collapse-item" href="reportePdf/usuarioPdf.php">Reporte de Usuarios</a>
+                      
+                    </div>
+                </div>
             </li>
+            <!-- Nav Item - Utilities Collapse Menu -->
+
+            <!--FIN Nav Item - Charts REPORTES  REPORTES REPORTES -->
+
+
+
+
 
 
             <!-- Divider -->

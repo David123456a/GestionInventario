@@ -16,7 +16,7 @@ if(isset($_POST['submit'])){
     $email= $_POST['email'];
     $user= $_POST['user'];
     $contraseña= $_POST['contraseña'];
-    $id_rol= $_POST['id_rol'];
+    $id_rol= $_POST['ID_ROL'];
  
 
     $query ="INSERT INTO users(nombre, email, usuario, contraseña, id_rol, fecha_creacion) 

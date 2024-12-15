@@ -1,5 +1,13 @@
 <?php   session_start();  ?>
 
+<?php
+    if(isset($_COOKIE['usuarioCookie'])){
+        $nombre=$_COOKIE['usuarioCookie'];
+    }else{
+        header("location: ../index.php");
+    }
+?>
+
 
 
 <?php    include('Includes/head.php');
@@ -401,6 +409,10 @@
                                 <!-- fin de los CARDS -->
 
 
+                                  <!-- Divider -->
+                                    <hr class="sidebar-divider">
+
+
 
 
 
@@ -442,7 +454,7 @@
                                                 <!-- Card Body -->
                                                 <div class="card-body">
                                                     <!-- el id colum1Grafico busca el archivo =  scriptGraficos/column1Grafico construye la grafica  var chart = new google.visualization.ColumnChart(document.getElementById('colum1Grafico'))-->
-                                                    <div id="colum1Grafico" class= "grafico">Grafico Barras</div>
+                                                    <div id="colum1Grafico" class= "grafico">Grafico Barras 1</div>
                                                 </div>
 
 
@@ -486,7 +498,7 @@
                                                 <!-- Card Body -->
                                                 <div class="card-body">
                                                 <!--     id= dona1Grafoco busca el archivo .js  script que construye la grafica = var chart = new google.visualization.PieChart(document.getElementById('dona1Grafico'));-->
-                                                    <div id="dona1Grafico"class="grafico" >Grafico3</div>     
+                                                    <div id="dona1Grafico"class="grafico" >Grafico dona 1</div>     
                                                 </div>
 
                                             </div>
@@ -507,7 +519,7 @@
                                                 <!-- Card Header - Dropdown -->
                                                 <div
                                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                                    <h6 class="m-0 font-weight-bold text-primary">Total de productos por Categorias</h6>
+                                                    <h6 class="m-0 font-weight-bold text-primary">Costo de productos por Categorias</h6>
 
                                                     <div class="dropdown no-arrow">
                                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
@@ -549,7 +561,7 @@
                                                 <!-- Card Header - Dropdown -->
                                                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
 
-                                                    <h6 class="m-0 font-weight-bold text-primary">Productos por Proveedores</h6>
+                                                    <h6 class="m-0 font-weight-bold text-primary">% Costo de Productos por Proveedores</h6>
 
                                                     <div class="dropdown no-arrow">
 
@@ -572,7 +584,7 @@
                                                 <!-- Card Body -->
                                                 <div class="card-body">
                                                 <!--     id= dona1Grafoco busca el archivo .js  script que construye la grafica = var chart = new google.visualization.PieChart(document.getElementById('dona1Grafico'));-->
-                                                    <div id="dona2Grafico"class="grafico" >Grafico4</div>     
+                                                    <div id="dona2Grafico"class="grafico" >Grafico Dona 2</div>     
                                                 </div>
 
                                             </div>

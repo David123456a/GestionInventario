@@ -1,3 +1,5 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+   
 
 <?php
 session_start();
@@ -18,7 +20,7 @@ $mostrar = mysqli_fetch_array ($result);
 //se extrae solo el id del rol para su validacion
 $id_rol= $mostrar['id_rol'];
 
-//echo "EL ROL ES =", $id_rol;
+
 
 
 
@@ -102,7 +104,7 @@ $con-> close();
 
                                             <script>
                                             setTimeout(function(){
-                                            window.location.href="rolPagina/rolSupervisor.php"
+                                            window.location.href="homeSupervisor.php"
                                             },1000);
                                             </script>
 
@@ -113,7 +115,7 @@ $con-> close();
 
                                             <script>
                                             setTimeout(function(){
-                                            window.location.href="viewUserRol/3colaborador.php"
+                                            window.location.href="homeColaborador.php"
                                             
                                             },1000);
                                             </script>
@@ -141,8 +143,6 @@ $con-> close();
                                     
                                     
 
-
-                                         
 
 
 

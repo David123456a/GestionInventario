@@ -12,7 +12,7 @@
                              ";
 
                      
-                     //$query = "SELECT * FROM products";
+                   
                       $result= $con->query($query);
  
                                //se valida en un bucle si hay asociaciones de datos para mostrar todos los datos de la tabla

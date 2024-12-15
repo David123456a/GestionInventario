@@ -3,8 +3,8 @@
 include ('../db.php');
 
 
-//se obtiene el ID del PRODUCTO seleccionado en el boton ACTUALIZAR, Dato viene del formulario del archivo READ.PHP, 
-//Gracias el metodo GET se obtiene el Id del producto a actualizar,  Dato viene del archivo READ.PHP Boton ACTUALIZAR variable ?ID
+//se obtiene el ID del PRODUCTO seleccionado en el boton ACTUALIZAR, Dato viene del formulario del archivo     editarProducto.php, 
+//Gracias el metodo GET se obtiene el Id del producto a actualizar,  Dato viene del archivo editarProducto.php Boton ACTUALIZAR variable ?ID
 $id = $_GET['id'];
 
 //Se consulta todos los datos del PRODUCTO en la base de datos aca la variante es que se hace un JOIN para obtener el id de la CATEGORIA
@@ -102,6 +102,7 @@ if (isset($_POST['submit'])){
                 <input type="text" name="stock" class="form-control" value="<?php echo $PRODUCTO['stock'];?>" require>
             </div>
 
+
              <!-- lista desplegable de las CATEGORIAS -->
             <div>
                
@@ -113,13 +114,13 @@ if (isset($_POST['submit'])){
                     ?>
                     <!-- Con name="CATEGORIA1" se evia al POST -->
                 <select name="CATEGORIA1" id="categories" class="form-control">
-                                <!--Se obtiene ID de CATEGORIA  -->     <!-- SELECTED relaciona nombre con ID CATEGORIA -->
-                    <option  value="<?php echo $PRODUCTO['id_categoria'];?>" selected><?php echo $PRODUCTO['nombre_categoria'];?></option>
+                                <!-- imprime datos del producto Seleccionado viene de la cadena $PRODUCTO es decir selcto con WHERE id=$id  -->    
+                    <option  value="<?php echo $PRODUCTO['id_categoria'];?>" selected>  <?php echo $PRODUCTO['nombre_categoria'];?>  </option>
                             <?php
                                 while ($row= $result->fetch_assoc() ){
                                 ?>
                                     <!-- Separa los datos que van a ser mostrado en la lista select -->
-                                    <option value="<?php echo $row['category_id'];?>"><?php echo $row['categoria'];?></option>
+                                    <option value="<?php echo $row['category_id'];?>">  <?php echo $row['categoria'];?>  </option>
                                 <?php   } ?>
 
                 </select>
@@ -140,18 +141,21 @@ if (isset($_POST['submit'])){
                    $query = "   SELECT id_proveedor , nombre_proveedor FROM proveedor ORDER BY nombre_proveedor  ";
                    $result= $con->query($query);
                    ?>
-                   <!-- Con name="CATEGORIA1" se evia al POST -->
-                     <select name="PROVEEDOR1" id="proveedor" class="form-control">
-                               <!--Se obtiene ID de CATEGORIA  -->     <!-- SELECTED relaciona nombre con ID CATEGORIA -->
-                   <option  value="<?php echo $PRODUCTO['id_proveedor'];?>" selected><?php echo $PRODUCTO['proveedor'];?></option>
+                   <!-- Con name="PROVEEDOR1" se evia al POST -->
+                    <select name="PROVEEDOR1" id="proveedor" class="form-control">
+
+                        <!-- Se extrae  id_proveedor y Proveedor del array $PRODUCTO del query Select producto relacionado al id seleccionado al formulario -->      
+                                          <!--Se extrae id_proveedor del array  -->                      <!-- Se extrae e imprime 'proveedor'de Array-->
+                        <option  value= "<?php echo $PRODUCTO['id_proveedor'];?>"  selected  >    <?php echo $PRODUCTO['proveedor'];?>    </option>
+
                            <?php
                                while ($row= $result->fetch_assoc() ){
                                ?>
                                    <!--  Datos  vienen del SELECT id_proveedor , nombre_proveedor FROM proveedor ORDER BY nombre -->
-                                   <option value="<?php echo $row['id_proveedor'];?>"><?php echo $row['nombre_proveedor'];?></option>
-                               <?php   } ?>
+                                   <option value= "<?php echo $row['id_proveedor'];?>" >  <?php echo $row['nombre_proveedor'];?>      </option>
+                            <?php   } ?>
 
-               </select>
+                    </select>
            </div>
 
 

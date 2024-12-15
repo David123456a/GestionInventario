@@ -10,10 +10,10 @@ if(isset($_POST['submit'])){
     $cantidad= $_POST['cantidad'];
     $observacion= $_POST['observacion'];
 
-    echo $producto;
-    echo $tipo_movimiento;
-    echo $cantidad;
-    echo $observacion;
+    //echo $producto;
+    //echo $tipo_movimiento;
+    //echo $cantidad;
+    //echo $observacion;
 
     
     $query ="   INSERT INTO movimientos( id_producto, tipo_movimiento, cantidad, observacion) 
@@ -33,7 +33,7 @@ if(isset($_POST['submit'])){
         <script>
         setTimeout(function(){
           window.location.href="../crearMovimiento.php"
-        },100);
+        },1000);
         </script>
         <?php
 

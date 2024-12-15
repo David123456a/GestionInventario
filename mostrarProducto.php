@@ -45,6 +45,14 @@
                     <div class="card-header py-3">
 
                                 <h6 class="m-0 font-weight-bold text-primary">Listado de productos</h6>
+
+                               
+                                
+                                <form action="generador_pdf.php" method="POST">
+                                     <!-- BOTON Generar reporte PDF -->
+                                    <button type="submit" class="btn btn-primary">Generar PDF</button>
+
+                                </form>
                             
                             <div class="card-body">
 

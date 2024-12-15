@@ -11,12 +11,12 @@ function dibujarGraficocol2() {
 
                     //Opciones del grafico
                     var options = {
-                    title: 'Cantiadad de productos por categorias',
+                    title: 'Costo de productos por categorias',
                     haxis: {title: 'Producto'},
-                    vAxis: {title: 'Cantidad'},
+                    vAxis: {title: 'Quetzales'},
                     legend: {position: 'none'},
                     bars: 'vertical',
-                    colors: ['#4285f4'],
+                    colors: ['#895812'],
                     width: 600,
                     height: 400,
 

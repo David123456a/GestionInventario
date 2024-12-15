@@ -78,48 +78,23 @@
                                         <button type="submit"class="btn btn-primary btn-user btn-block">Acceder</button>
 
 
-
-
                                     </form>
 
-
                                     
-
-
-
-                                    
-                                    
-                 
-
-
-
-                                                                    
-
 
                                     <div class="text-center">
                                         <a class="small" href="forgot-password.html">Olvide mi contraseña</a>
                                     </div>
 
 
-
-                                                       
-
-
-
-
-
-
                                    
                                 </div>
 
 
-
-                                
-
-
-
-
                             </div>
+
+
+                            
                         </div>
                     </div>
                 </div>

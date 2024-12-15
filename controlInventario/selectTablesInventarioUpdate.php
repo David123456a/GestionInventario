@@ -31,9 +31,11 @@
                              <td>   <?php echo $row['nombre_proveedor']; ?></td>
                            
                              <td> 
-                             <a href="controlInventario/updateProducto.php?id=<?php echo $row['id'];  ?>" class="btn btn-warning">Actualizar</a>     
-                                    
-                            <a href="controlInventario/updateProducto.php?id=<?php echo $row['id']; ?>" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#updateModal" data-bs-whatever="@mdo">MODAL</a>                          
+                                <a href="controlInventario/updateProducto.php?id=<?php echo $row['id'];  ?>" class="btn btn-warning">Actualizar</a>     
+                                <!-- BOTON Para la modal -->  
+                                <!--     
+                                <a href="controlInventario/updateProducto.php?id=<?php // echo $row['id']; ?>" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#updateModal" data-bs-whatever="@mdo">MODAL</a>   
+                                 -->                       
                             </td>
                             
                         </tr>

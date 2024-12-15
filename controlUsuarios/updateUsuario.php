@@ -7,7 +7,11 @@ include ('../db.php');
 $id = $_GET['id'];
 
 //Se consulta todos los datos del idUsuraion en la base de datos
-$query = "SELECT * FROM users WHERE id=$id";
+$query = "  SELECT u.nombre, u.email, u.usuario, u.contraseña, r.id_rol, r.nombre as nombre_rol
+            FROM users u
+            JOIN rol r ON u.id_rol= r.id_rol
+            WHERE u.id=$id;
+        ";
 
 //se asigna los datos que vienen de la base de datos a la variable local $result
 $result = $con->query($query);
@@ -15,13 +19,13 @@ $usuario = $result->fetch_assoc();
 
 
 
-//Actualizacion de los campos al momento de darle Guardad al Boton
+//Actualizacion de los campos al momento de darle Guardad al Boton del formulario que actualiza los datos por medio de los name
 if (isset($_POST['submit'])){
     $name= $_POST['name'];
     $email= $_POST['email'];
     $user= $_POST['user'];
     $password= $_POST['password'];
-    $id_rol= $_POST['id_rol'];
+    $id_rol= $_POST['ROL1'];
    // $created = $_POST['fecha_creacion'];
 
     $query = "UPDATE users
@@ -71,10 +75,38 @@ if (isset($_POST['submit'])){
                 <input type="text" name="password" class="form-control" value="<?php echo $usuario['contraseña'];?>" require>
             </div>
 
+
+
+        
+
+
             <div>
-                <label for="id_rol">Tipo de Usuario</label>
-                <input type="Number" name="id_rol" class="form-control "value="<?php echo $usuario['id_rol'];?>" require>            
-            </div>
+               
+                   <label for="">Tipo de Usuario  <br> </label>
+
+                   <?php
+                   $query = "   SELECT id_rol , nombre FROM rol ORDER BY nombre  ";
+                   $result= $con->query($query);
+                   ?>
+
+                   <!--se asigna  name="ROL1" se evia en el formulario por  $POST -->
+                    <select       name="ROL1"     id="id_rol" class="form-control">
+
+                        <!-- Se extrae  id_rol y nombre_rol del array $usuario del query Select rol relacionado al id seleccionado en el boton ACTUALIZAR del archivo  controlUsuarios.php -->      
+                                          <!--Se extrae id_usuario del array  -->                      <!-- Se extrae e imprime 'proveedor'de Array-->
+                        <option  value= "<?php echo $usuario['id_rol'];?>"  selected  >    <?php echo $usuario['nombre_rol'];?>    </option>
+
+                           <?php
+                               while ($row= $result->fetch_assoc() ){
+                               ?>
+                                   <!--  Datos vienen $query = "SELECT id_rol , nombre FROM rol ORDER BY nombre  "; esta consulta esta en el div que contiene el while ose aca -->
+                                   <option value= "<?php echo $row['id_rol'];?>" >     <?php echo $row['nombre'];?>      </option>
+                            <?php   } ?>
+
+                    </select>
+           </div>
+
+
        
             <button type="submit" name="submit" class="btn btn-success">Guardar</button>
 
